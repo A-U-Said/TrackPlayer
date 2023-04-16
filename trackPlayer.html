@@ -1,0 +1,73 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="stylesheet" href="css/trackPlayer.css">
+	</head>
+	
+	<body>
+
+		<section>
+
+			<script>
+				var tracks = [
+					{"Name":"Track 5", "Url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", "Date":"05/01/2023"},
+					{"Name":"Track 4", "Url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3", "Date":"04/01/2023"},
+					{"Name":"Track 3", "Url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3", "Date":"03/01/2023"},
+					{"Name":"Track 2", "Url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3", "Date":"02/01/2023"},
+					{"Name":"Track 1", "Url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3", "Date":"01/01/2023"}
+				].sort((a,b) => new Date(b.Date) - new Date(a.Date));
+				var hidePlaylistEntries = false;
+			</script>
+			
+
+			<div id="playlist-header" class="playlist-header ">
+				
+				<img src="https://placekitten.com/g/150/150" alt="Playlist Cover">
+				
+				<div id="playlist-container">
+					<div class="playlist-details">
+						<span class="section-header">My Playlist - </span>
+						<span id='track-count' class="sub-header"></span>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies lectus placerat, malesuada arcu eu, ullamcorper velit. Maecenas turpis quam, egestas eu finibus non, consequat volutpat leo.</p>
+					</div>
+					
+					<audio id="playlist-player" src=""></audio>
+						
+					<div class="playlist-navigation">
+						<button id="prev" class="playlist-btn">
+							<i class="fas fa-backward"></i>
+						</button>
+						<button id="play" class="playlist-btn playlist-btn-big">
+							<i class="fas fa-play"></i>
+						</button>
+						<button id="next" class="playlist-btn">
+							<i class="fas fa-forward"></i>
+						</button>
+					</div>
+					
+					<div class="music-info">
+						<div class="track-container">
+							<p id="track-title"></p>
+							<p id="progress-time"></p>
+						</div>
+						<div class="progress-container" id="progress-container">
+							<div class="progress" id="progress"></div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+				
+			<ul id="playlist-tracks" class="playlist-tracks">
+			</ul>
+
+
+		</section>
+	
+		<script type="text/javascript" src="js/trackPlayer.js"></script>
+
+	</body>
+	
+</html>
